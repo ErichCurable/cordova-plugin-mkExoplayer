@@ -1,0 +1,67 @@
+{
+  "_from": "git+https://github.com/mkalyon/cordova-plugin-mkExoplayer.git",
+  "_id": "cordova-plugin-mkExoplayer@1.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-mkExoplayer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/mkalyon/cordova-plugin-mkExoplayer.git",
+    "rawSpec": "https://github.com/mkalyon/cordova-plugin-mkExoplayer.git",
+    "saveSpec": "git+https://github.com/mkalyon/cordova-plugin-mkExoplayer.git",
+    "fetchSpec": "https://github.com/mkalyon/cordova-plugin-mkExoplayer.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "git+https://github.com/mkalyon/cordova-plugin-mkExoplayer.git#f50520f2b79d36d927a5adf29c48f7d7e4fc7b66",
+  "_spec": "https://github.com/mkalyon/cordova-plugin-mkExoplayer.git",
+  "_where": "/mnt/c/DEV/src/github.com/curable-health/native-clara6/native-clara",
+  "author": {
+    "name": "mkalyon"
+  },
+  "bugs": {
+    "url": "https://github.com/mkalyon/cordova-plugin-mkExoplayer/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-mkExoplayer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Media player for Cordova using Google's ExoPlayer framework",
+  "devDependencies": {
+    "jshint": "^2.9.0"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=8.1.0"
+    }
+  ],
+  "homepage": "https://github.com/mkalyon/cordova-plugin-mkExoplayer#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "phonegap",
+    "cordova",
+    "ionic",
+    "android",
+    "exoplayer",
+    "exo",
+    "video",
+    "player"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-mkExoplayer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontyard/cordova-plugin-mkExoplayer.git"
+  },
+  "version": "1.0.1"
+}
