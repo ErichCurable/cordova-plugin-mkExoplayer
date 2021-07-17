@@ -167,6 +167,9 @@ public class mkPlayer{
 
         @Override
         public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+            if (config.isAudioOnly()) {
+                return;
+            }
             if (config.getShowBuffering()) {
                 LayoutProvider.setBufferingVisibility(exoView, activity, playbackState == ExoPlayer.STATE_BUFFERING);
             }
@@ -424,7 +427,10 @@ public class mkPlayer{
         String audioFocusString = audioFocusResult == AudioManager.AUDIOFOCUS_REQUEST_FAILED ?
                 "AUDIOFOCUS_REQUEST_FAILED" :
                 "AUDIOFOCUS_REQUEST_GRANTED";
-        mclock() ;
+        if (!config.isAudioOnly()) {
+            mclock();
+        }
+
         TrackSelection.Factory trackSelectionFactory;
         trackSelectionFactory = new RandomTrackSelection.Factory();
         trackSelector = new DefaultTrackSelector(trackSelectionFactory);
@@ -445,7 +451,7 @@ public class mkPlayer{
                 exoPlayer.seekTo(offset);
             }
             exoPlayer.prepare(mediaSource);
-
+            exoPlayer.setRepeatMode(com.google.android.exoplayer2.Player.REPEAT_MODE_ALL);
             exoPlayer.setPlayWhenReady(autoPlay);
             paused = !autoPlay;
 
@@ -556,7 +562,9 @@ public class mkPlayer{
         if (exoPlayer != null) {
             exoPlayer.release();
             exoPlayer = null;
-            dialog.dismiss();
+            if(dialog != null) {
+                dialog.dismiss();
+            }
         }
         if (this.dialog != null) {
             dialog.dismiss();
@@ -631,6 +639,7 @@ public class mkPlayer{
 
     private void play() {
         paused = false;
+
         exoPlayer.setPlayWhenReady(true);
     }
 
@@ -642,6 +651,10 @@ public class mkPlayer{
     private long normalizeOffset(long newTime) {
         long duration = exoPlayer.getDuration();
         return duration == 0 ? 0 : Math.min(Math.max(0, newTime), duration);
+    }
+
+    public void setVolume(long volume) {
+        exoPlayer.setVolume(volume);
     }
 
     public JSONObject seekTo(long timeMillis) {

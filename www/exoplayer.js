@@ -30,6 +30,9 @@ module.exports = {
     setStream: function (url, controller, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "mkExoPlayer", "setStream", [url, controller]);
     },
+    setVolume: function (volume, successCallback, errorCallback) {
+       cordova.exec(successCallback, errorCallback, "mkExoPlayer", "setVolume", [volume]);
+    },
     playPause: function (successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "mkExoPlayer", "playPause", []);
     },
